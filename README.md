@@ -46,8 +46,8 @@ Attempt to start the Celery worker headless:
 
 The last line of output as it errors should look something like:
 
-pex:     /Users/mross/.pex/install/amqp-2.4.2-py2.py3-none-any.whl.0947f8676094f8ddeaff8e64f7e11729b544df03/amqp-2.4.2-py2.py3-none-any.whl
-pex:   * /Users/mross/python_work/celery_example/dist/example.celery.pex/.bootstrap
+pex:     ~/.pex/install/amqp-2.4.2-py2.py3-none-any.whl.0947f8676094f8ddeaff8e64f7e11729b544df03/amqp-2.4.2-py2.py3-none-any.whl
+pex:   * ~/python_work/celery_example/dist/example.celery.pex/.bootstrap
 pex:   * - paths that do not exist or will be imported via zipimport
 In app.worker.py
 
@@ -55,7 +55,7 @@ This isn't particularly helpful and after digging into the code it can be seen a
 
 Commenting the redirection out displays more info on what is happening, to do this go to the pex cache dir and find the celery files which are being run, in this case:
 
-	~/mross/.pex/install/celery-4.2.1-py2.py3-none-any.whl.79938b815d642fb6adfd6178bdd22f2f94a24a66/celery-4.2.1-py2.py3-none-any.whl/celery
+	~/.pex/install/celery-4.2.1-py2.py3-none-any.whl.79938b815d642fb6adfd6178bdd22f2f94a24a66/celery-4.2.1-py2.py3-none-any.whl/celery
 
 Open platforms.py and update the method redirect_to_null nested within class DaemonContext(object) to:
 
